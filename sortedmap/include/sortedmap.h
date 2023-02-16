@@ -16,7 +16,7 @@
 
 #ifndef Py_TPFLAGS_CHECKTYPES
 #define Py_TPFLAGS_CHECKTYPES 0  // ignore this in py3
-#endif  / Py_TPFLAGS_CHECKTYPES
+#endif  // Py_TPFLAGS_CHECKTYPES
 
 #define likely(condition) __builtin_expect(!!(condition), 1)
 #define unlikely(condition) __builtin_expect(!!(condition), 0)

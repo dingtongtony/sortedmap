@@ -1,7 +1,7 @@
 #include <vector>
 #include <exception>
 #include <map>
-
+#include <stdexcept>
 #include "sortedmap.h"
 
 const char *sortedmap::keyiter::name = "sortedmap.keyiter";
@@ -723,13 +723,7 @@ sortedmap::update(sortedmap::object *self, PyObject *args, PyObject *kwargs) {
     }
 
     if (arg) {
-#if !COMPILING_IN_PY2
-        _Py_IDENTIFIER(keys);
-
-        if (_PyObject_HasAttrId(arg, &PyId_keys))
-#else
         if (PyObject_HasAttrString(arg, "keys"))
-#endif  // !COMPILING_IN_PY2
         {
 
             if (unlikely(!merge(self, arg))) {
